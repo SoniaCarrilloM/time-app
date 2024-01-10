@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tell me the Time</title>
+    <div id="hello">Hello</div>
+    <div id="date"></div>
+    <div id="milliseconds"></div>
+    </Hello>
     <style>
       body {
         color: pink;
@@ -15,16 +19,36 @@
         position: center;
         background: bisque;
       }
+
     </style>
   </head>
   <body>
     <main></main>
 
     <script>
-      function sayHello() {
-        alert("Hello, you!");
+          function displayDate() {
+
+      let date = document.querySelector("#date");
+
+      date.innerHTML = new Date();
       }
-      setTimeout(sayHello, 1000);
+
+      function showCurrentDate() {
+  let dateElement = document.querySelector("#date");
+
+  dateElement.innerHTML = new Date();
+}
+
+function showCurrentMilliseconds() {
+  let millisecondsElement = document.querySelector("#milliseconds");
+  let currentDate = new Date();
+  millisecondsElement.innerHTML = currentDate.getMilliseconds();
+}
+
+      
+      setTimeout(showCurrentDate, 5000);
+      
+      setInterval(showCurrentMilliseconds, 1);
     </script>
   </body>
 </html>
